@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Header />
+    <Header-2 />
     <router-view class="view"></router-view>
     <Particles
       id="tsparticles"
