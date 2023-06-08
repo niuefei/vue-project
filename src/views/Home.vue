@@ -9,5 +9,8 @@
 </script>
 
 <style>
+.container {
+  z-index: 999;
+}
 
 </style>

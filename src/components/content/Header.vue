@@ -50,6 +50,7 @@ onMounted(() => {
 <style lang="scss" scoped>
 
 .header {
+  z-index: 2;
   font-family: alimama;
   padding-right: 20px;
   display: flex;
