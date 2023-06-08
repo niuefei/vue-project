@@ -8,7 +8,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@amap/amap-jsapi-loader": "^1.0.1",
+    "amap-js": "^2.4.0",
+    "echarts": "^5.4.2",
+    "echarts-extension-amap": "^1.11.0",
+    "echarts-map": "^3.0.1",
+    "element-plus": "^2.3.5",
+    "particles.vue3": "^2.10.1",
     "pinia": "^2.0.36",
+    "sass": "^1.62.1",
+    "tsparticles": "^2.10.1",
     "unplugin-auto-import": "^0.16.2",
     "unplugin-vue-components": "^0.24.1",
     "vue": "^3.3.2",
