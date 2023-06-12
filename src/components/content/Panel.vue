@@ -11,6 +11,7 @@
 
 <style scoped lang="scss">
 .container {
+  margin-bottom: 10px;
   position: relative;
   display: inline-block;
   // border: 1px solid red;

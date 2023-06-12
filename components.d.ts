@@ -9,6 +9,8 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Bottom1: typeof import('./src/components/view/Bottom1.vue')['default']
+    Bottom2: typeof import('./src/components/view/Bottom2.vue')['default']
     DeviceData: typeof import('./src/components/device/DeviceData.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']
@@ -17,7 +19,9 @@ declare module '@vue/runtime-core' {
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     ElMenuItemGroup: typeof import('element-plus/es')['ElMenuItemGroup']
+    ElOption: typeof import('element-plus/es')['ElOption']
     ElRow: typeof import('element-plus/es')['ElRow']
+    ElSelect: typeof import('element-plus/es')['ElSelect']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     Header: typeof import('./src/components/content/Header.vue')['default']
     Header2: typeof import('./src/components/content/Header2.vue')['default']
@@ -28,8 +32,14 @@ declare module '@vue/runtime-core' {
     IconEcosystem: typeof import('./src/components/icons/IconEcosystem.vue')['default']
     IconSupport: typeof import('./src/components/icons/IconSupport.vue')['default']
     IconTooling: typeof import('./src/components/icons/IconTooling.vue')['default']
+    Left1: typeof import('./src/components/view/Left1.vue')['default']
+    Left2: typeof import('./src/components/view/Left2.vue')['default']
+    Left3: typeof import('./src/components/view/Left3.vue')['default']
+    Left4: typeof import('./src/components/view/Left4.vue')['default']
     Map: typeof import('./src/components/view/Map.vue')['default']
     Panel: typeof import('./src/components/content/Panel.vue')['default']
+    Right1: typeof import('./src/components/view/Right1.vue')['default']
+    Right2: typeof import('./src/components/view/Right2.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SubList: typeof import('./src/components/device/SubList.vue')['default']

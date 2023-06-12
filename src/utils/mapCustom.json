@@ -1,0 +1,19 @@
+[{
+  "featureType": "water",
+  "elementType": "all",
+  "stylers": {
+    "color": "#031628"
+  }
+}, {
+  "featureType": "land",
+  "elementType": "geometry",
+  "stylers": {
+    "color": "#f6f6f6"
+  }
+}, {
+  "featureType": "highway",
+  "elementType": "all",
+  "stylers": {
+    "visibility": "off"
+  }
+}]
