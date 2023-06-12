@@ -50,9 +50,7 @@ onMounted(() => {
     console.log(123123);
     document.querySelector(".viewContainer").style.width = screenSize.width + 'px'
     // document.querySelector(".viewContainer").style.height = screenSize.height + 'px'
-
     document.querySelector(".viewContainer").style.transform = `scaleX(${scale1}) scaleY(${scale2})`
-
    }
   }
   setSize();
@@ -64,7 +62,6 @@ onMounted(() => {
 
 <style scoped>
 .viewContainer {
-  border: 1px solid red;
   height: 1220px;
   overflow: hidden;
   position: absolute;
@@ -98,7 +95,7 @@ onMounted(() => {
   /* flex-wrap: wrap; */
   flex-direction: column;
   justify-content: space-between;
-  width: 430px;
+  /* width: 430px; */
   height: 825px;
   /* border: 1px solid red; */
 }

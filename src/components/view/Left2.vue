@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <div class="title">节点设备状态：</div>
+  <div class="container" :style="{width: clientWidth2*0.45+'px'}">
+    <div class="title">{{activeCity.name}}节点设备状态：</div>
     <div class="list">
       <div>已接：{{ activeCity.deviceCount1 }}</div>
       <div>未接：{{ activeCity.deviceCount2 }}</div>
@@ -15,13 +15,13 @@ import { mainStore } from "@/stores/index";
 import { storeToRefs } from "pinia";
 
 const store = mainStore();
-const { activeCity } = storeToRefs(store);
+const { activeCity , clientWidth2 } = storeToRefs(store);
 </script>
 
 <style lang="scss" scoped>
 .container {
   display: flex;
-  width: 380px;
+  // width: 380px;
   box-sizing: border-box;
   font-family: alimama;
   height: 100px;
@@ -33,7 +33,7 @@ const { activeCity } = storeToRefs(store);
   }
   .list {
     div {
-    margin-left: 10px;
+    margin-left: 30px;
     margin-top: 13px;
     font-size: 20px;
     color: #fafafa;

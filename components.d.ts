@@ -12,6 +12,7 @@ declare module '@vue/runtime-core' {
     Bottom1: typeof import('./src/components/view/Bottom1.vue')['default']
     Bottom2: typeof import('./src/components/view/Bottom2.vue')['default']
     DeviceData: typeof import('./src/components/device/DeviceData.vue')['default']
+    DeviceData1: typeof import('./src/components/device/DeviceData1.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']
     ElCol: typeof import('element-plus/es')['ElCol']

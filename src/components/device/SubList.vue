@@ -1,92 +1,68 @@
 <template>
   <div class="container">
     <el-menu
-      default-active="1-1"
-      class="el-menu-vertical-demo"
+      background-color="#1E2E48"
+      default-active="0"
+      text-color="#FFFFFF"
       @open="handleOpen"
       @close="handleClose"
-      
+      @select="handleSelect"
     >
-
-      <el-sub-menu :index="item.areaCode" v-for="item in data" :key="item">
+      <el-sub-menu index="0">
         <template #title>
-          <el-icon><location /></el-icon>
-          <span>{{ item.name }}</span>
+          <a href="javascript:;" style="font-family: alimama; font-size: 18px;">实验地1</a>
         </template>
-        <el-menu-item-group>
-          <el-menu-item :index="item2.index" @click="handleSelect(item2)" v-for="item2 in item.devices" :key="item2">{{ item2.name }}</el-menu-item>
-        </el-menu-item-group>
+        <el-menu-item index="0-0" style="font-family: alimama;">设备1</el-menu-item>
+        <el-menu-item index="0-1" style="font-family: alimama;">设备2</el-menu-item>
+        <el-menu-item index="0-2" style="font-family: alimama;">设备3</el-menu-item>
       </el-sub-menu>
 
+      <el-sub-menu index="1">
+        <template #title>
+          <a href="javascript:;" style="font-family: alimama; font-size: 18px;">实验地2</a>
 
+        </template>
+        <el-menu-item index="1-0" style="font-family: alimama;">设备1</el-menu-item>
+        <el-menu-item index="1-1" style="font-family: alimama;">设备2</el-menu-item>
+        <el-menu-item index="1-2" style="font-family: alimama;">设备3</el-menu-item>
+      </el-sub-menu>
+      <el-sub-menu index="2">
+        <template #title>
+          <a href="javascript:;" style="font-family: alimama; font-size: 18px;">实验地3</a>
 
+        </template>
+        <el-menu-item index="2-0" style="font-family: alimama;">设备1</el-menu-item>
+        <el-menu-item index="2-1" style="font-family: alimama;">设备2</el-menu-item>
+        <el-menu-item index="2-2" style="font-family: alimama;">设备3</el-menu-item>
+      </el-sub-menu>
+      <el-sub-menu index="3">
+        <template #title>
+          <a href="javascript:;" style="font-family: alimama; font-size: 18px;">实验地4</a>
+        </template>
+        <el-menu-item index="3-0" style="font-family: alimama;">设备1</el-menu-item>
+        <el-menu-item index="3-1" style="font-family: alimama;">设备2</el-menu-item>
+        <el-menu-item index="3-2" style="font-family: alimama;">设备3</el-menu-item>
+      </el-sub-menu>
     </el-menu>
   </div>
 </template>
 
 <script setup>
-
 import { mainStore } from '@/stores/index'
 import { storeToRefs } from 'pinia'
 const store = mainStore()
 const { activeDeviceCode } = storeToRefs(store)
 
-import { ref } from "vue"
-let data = ref([])
-data.value = [
-  {
-    name: "区域1",
-    areaCode: 1,
-    devices: [
-      {
-        name: "设备1",
-        deviceCode: 1,
-        index: "1-1"
-      },
-      {
-        name: "设备2",
-        deviceCode: 2,
-        index: '1-2'
-      },
-
-    ]
-  },
-  {
-    name: "区域2",
-    areaCode: 2,
-    devices: [
-      {
-        name: "设备3",
-        deviceCode: 3,
-        index: '2-1'
-      },
-      {
-        name: "设备4",
-        deviceCode: 4,
-        index: '2-2'
-      },
-
-    ]
-  },
-  ];
-
-  // 事件处理函数
-  function handleSelect(e) {
-    // console.log(e);
-    activeDeviceCode.value = e.deviceCode
-  }
-  function handleOpen() {
-
-  }
-  function handleClose() {
-    
-  }
+function handleSelect(e) {
+  activeDeviceCode.value = e
+}
 </script>
 
 <style lang="scss" scoped>
 .container {
-  margin-top: 20px;
-  border-radius: 10px;
-  width: 200px;
+  border: 1px solid red;
+  position: sticky;
+  top: 0;
+  width: 300px;
 }
 </style>

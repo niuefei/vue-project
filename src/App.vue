@@ -17,6 +17,12 @@ import { ref, onMounted } from "vue";
 import { options } from "./utils/bg";
 import { loadFull } from "tsparticles";
 import { getClient } from "@/utils/windowSize";
+import { mainStore } from '@/stores/index'
+import { storeToRefs } from 'pinia'
+const store = mainStore()
+const { clientWidth2 } = storeToRefs(store)
+
+
 getClient();
 const particlesInit = ref();
 particlesInit.value = async (engine) => {
@@ -47,6 +53,7 @@ onMounted(() => {
       width: screen.width,
       height: screen.height,
     };
+    clientWidth2.value =  screenSize.width - 700;
     // 获取屏幕的高度
     // console.log(screenSize);
     // 获得可视区size

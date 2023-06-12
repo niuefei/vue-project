@@ -5,7 +5,7 @@ export const mainStore = defineStore("main", {
     return {
       // 路由相关
       page: "1",
-
+      clientWidth2: 0,
       // 当前的设备
       activeDeviceCode: 1,
 

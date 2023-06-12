@@ -43,11 +43,11 @@ const store = mainStore()
 const { page , cities , activeCity } = storeToRefs(store)
 // 深度拷贝
 let a = JSON.stringify(cities.value)
-let b = JSON.parse(a)
+  let b = JSON.parse(a)
 
-activeCity.value = cities.value[0]
+  activeCity.value = cities.value[0]
 
-function handleChange(e) {
+  function handleChange(e) {
 
   console.log(e);
   let index = Number(e)

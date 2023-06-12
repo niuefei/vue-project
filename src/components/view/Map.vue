@@ -114,8 +114,8 @@ function initMap() {
     chart.setOption(option);
     let map = chart.getModel().getComponent("amap").getAMap(); //获取高德地图实例
     // 设置地图样式
-    // const mapStyle = "amap://styles/green";
-    // map.setMapStyle(mapStyle);
+    const mapStyle = "amap://styles/darkblue";
+    map.setMapStyle(mapStyle);
     // 处理点击事件并且跳转到相应的页面
   });
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="title">设备耗电量：</div>
-    <div id="right1" style="width: 400px; height: 300px"></div>
+    <div id="right1" :style="{width: clientWidth2*0.45+'px', height: '300px'}"></div>
   </div>
 </template>
 
@@ -13,7 +13,7 @@ import { mainStore } from "@/stores/index";
 import { storeToRefs } from "pinia";
 
 const store = mainStore();
-const { activeCity } = storeToRefs(store);
+const { activeCity,clientWidth2 } = storeToRefs(store);
 
 watch(activeCity, (newValue, oldValue) => {
   createChart();

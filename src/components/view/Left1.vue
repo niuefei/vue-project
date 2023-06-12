@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="title">综合水质等级:</div>
-    <div id="main" class="main" style="width: 380px; height: 310px;"></div>
+    <div id="main" class="main" :style="{width: clientWidth2*0.45+'px', height: '310px'}"></div>
   </div>
 </template>
 
@@ -11,7 +11,7 @@ import { onMounted  , watch , ref} from "vue";
 import { mainStore } from '@/stores/index'
 import { storeToRefs } from 'pinia'
 const store = mainStore()
-const { activeCity } = storeToRefs(store)
+const { activeCity , clientWidth2 } = storeToRefs(store)
 
 watch(activeCity , (newValue , oldValue) => {
   createChart()
@@ -33,11 +33,11 @@ function createChart() {
           center: ['50%' , '50%'],
           progress: {
             show: true,
-            width: 12,
+            width: 14,
           },
           axisLine: {
             lineStyle: {
-              width: 12,
+              width: 14,
             },
           },
           axisTick: {

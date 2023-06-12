@@ -16,7 +16,7 @@
         />
       </el-select>
     </div>
-    <div id="right2" style="width: 400px; height: 380px"></div>
+    <div id="right2" :style="{width: clientWidth2*0.45+'px', height: '380px'}"></div>
   </div>
 </template>
 
@@ -28,7 +28,7 @@ import { mainStore } from "@/stores/index";
 import { storeToRefs } from "pinia";
 
 const store = mainStore();
-const { activeCity } = storeToRefs(store);
+const { activeCity  , clientWidth2 } = storeToRefs(store);
 
 let a = JSON.stringify(activeCity.value.streets);
 let b = JSON.parse(a);
@@ -65,7 +65,6 @@ function handleChange(e) {
   addItem(selectList,e)
   res = extractNameAndValue(selectList)
 
-  // console.log(res);
   createChart()
 }
 
@@ -91,8 +90,6 @@ function addItem(array, newItem) {
     // 若不存在相同 name 属性的对象，则添加到数组中
     array.push(newItem);
   }
-
-  // console.log(array);
 }
 
 function extractNameAndValue(array) {
@@ -111,46 +108,52 @@ function createChart() {
   var option;
 
   option = {
-    aria: {
-      //无障碍花纹
-      decal: {
-        show: true,
-      },
-      enabled: true,
+  aria: {
+    // 无障碍设置
+    decal: {
+      show: true,
     },
-    xAxis: {
-      type: "category",
-      data: res.names,
-    },
-    yAxis: {
+    enabled: true,
+  },
+  xAxis: {
+    type: "category",
+    data: res.names,
+  },
+  yAxis: {
     type: "value",
     min: 0,
     max: 100,
     interval: 20,
   },
   tooltip: {
-      show: true,
-      trigger: "axis",
-    },
-    series: [
-      {
-        data: res.values,
-        type: "bar",
-        itemStyle: {
-          color: function (params) {
-            var colorList = [
-              "#f98373",
-              "#faf1ba",
-              "#93b7e3",
-              "#a5e7f0",
-              "#cbb0e3",
-            ];
-            return colorList[params.dataIndex];
-          },
+    show: true,
+    trigger: "axis",
+  },
+  series: [
+    {
+      data: res.values,
+      type: "bar",
+      itemStyle: {
+        color: function (params) {
+          var colorList = [
+            "#f98373",
+            "#faf1ba",
+            "#93b7e3",
+            "#a5e7f0",
+            "#cbb0e3",
+          ];
+          return colorList[params.dataIndex];
         },
       },
-    ],
-  };
+      emphasis: {
+        itemStyle: {
+          // 鼠标经过高亮样式
+          opacity: 0.7,
+        },
+      },
+    },
+  ],
+};
   option && myChart.setOption(option);
 }
 onMounted(() => {
