@@ -1,9 +1,8 @@
 <template>
   <div class="container">
-    {{ activeDeviceCode }}
     <panel>
-    <device-data-1/>
-
+    <!-- <device-data-1/> -->
+    <device-data-2 />
     </Panel>
   </div>
 </template>
@@ -12,7 +11,7 @@
 import { mainStore } from '@/stores/index'
 import { storeToRefs } from 'pinia'
 const store = mainStore()
-const { activeDeviceCode } = storeToRefs(store)
+const {  } = storeToRefs(store)
 
 </script>
 

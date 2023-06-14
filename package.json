@@ -17,6 +17,7 @@
     "particles.vue3": "^2.10.1",
     "pinia": "^2.0.36",
     "sass": "^1.62.1",
+    "swiper": "^9.4.1",
     "tsparticles": "^2.10.1",
     "unplugin-auto-import": "^0.16.2",
     "unplugin-vue-components": "^0.24.1",

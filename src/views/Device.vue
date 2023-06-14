@@ -1,7 +1,7 @@
 <template>
   <div class="container1">
-    <sub-list class="sub-list" />
-    <device-data class="device" />
+    <sub-list/>
+    <device-data/>
   </div>
 </template>
 
@@ -47,13 +47,9 @@ onMounted(() => {
 .container1 {
   position: absolute;
   top: 11vh;
-  border: 1px solid red;  
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
   transform-origin: top left;
-  .device {
-    width: calc(100% - 300px);
-  }
 }
 </style>

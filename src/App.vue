@@ -19,8 +19,9 @@ import { loadFull } from "tsparticles";
 import { getClient } from "@/utils/windowSize";
 import { mainStore } from '@/stores/index'
 import { storeToRefs } from 'pinia'
+
 const store = mainStore()
-const { clientWidth2 } = storeToRefs(store)
+const { clientWidth2 , clientWidth1 } = storeToRefs(store)
 
 
 getClient();
@@ -54,6 +55,7 @@ onMounted(() => {
       height: screen.height,
     };
     clientWidth2.value =  screenSize.width - 700;
+    clientWidth1.value = screenSize.width
     // 获取屏幕的高度
     // console.log(screenSize);
     // 获得可视区size

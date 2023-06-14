@@ -1,6 +1,6 @@
 <template>
   <div class="container header2">
-    <el-select class="select" @change="handleChange" v-model="activeCity.name" placeholder="选择" size="large">
+    <el-select class="select" v-if="isView" @change="handleChange" v-model="activeCity.name" placeholder="选择" size="large">
     <el-option
       v-for="item in b"
       :key="item.name"
@@ -41,6 +41,7 @@ import { mainStore } from '@/stores/index'
 import { storeToRefs } from 'pinia'
 const store = mainStore()
 const { page , cities , activeCity } = storeToRefs(store)
+let isView = ref(false)
 // 深度拷贝
 let a = JSON.stringify(cities.value)
   let b = JSON.parse(a)
@@ -66,6 +67,13 @@ function handleIndex(){
 }
 
 function handleSelect(e) {
+  console.log(e);
+  if(e == 2) {
+    isView.value = true
+  } 
+  else {
+    isView.value  = false
+  }
   page.value = e
   window.localStorage.setItem("activePage" , e)
 }

@@ -41,13 +41,10 @@ onMounted(() => {
       width: document.documentElement.clientWidth,
       height: document.documentElement.clientHeight,
     };
-    // console.log(clientSize);
     let scale1 = clientSize.width / screenSize.width;
     let scale2 = clientSize.height / screenSize.height;
-    // console.log(scale1, scale2);
 
    if(document.querySelector(".viewContainer")) {
-    console.log(123123);
     document.querySelector(".viewContainer").style.width = screenSize.width + 'px'
     // document.querySelector(".viewContainer").style.height = screenSize.height + 'px'
     document.querySelector(".viewContainer").style.transform = `scaleX(${scale1}) scaleY(${scale2})`
