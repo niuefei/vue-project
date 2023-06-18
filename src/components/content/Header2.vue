@@ -53,13 +53,15 @@ let a = JSON.stringify(cities.value)
   console.log(e);
   let index = Number(e)
   activeCity.value = cities.value[index]
-  console.log(activeCity.value);
 }
 
 function handleIndex(){
   let activeIndex = window.localStorage.getItem("activePage")
   if(activeIndex) {
     page.value = activeIndex
+    if(activeIndex == 2) {
+      isView.value = true
+    }
   }
   else {
     window.localStorage.setItem("activePage" , "1")
@@ -67,7 +69,6 @@ function handleIndex(){
 }
 
 function handleSelect(e) {
-  console.log(e);
   if(e == 2) {
     isView.value = true
   } 

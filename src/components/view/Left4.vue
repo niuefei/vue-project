@@ -1,10 +1,12 @@
 <template>
   <div class="container">
-    <div class="title">截止时间: {{ dateString }}</div>
+    <div class="title">污染预警处理数量</div>
+    
     <div
       id="left4"
-      :style="{ width: clientWidth2 * 0.45 + 'px', height: '269px' }"
+      :style="{ width: clientWidth2 * 0.45 + 'px', height: '249px' }"
     ></div>
+    <div class="title2">截止时间: {{ dateString }}</div>
   </div>
 </template>
 
@@ -38,10 +40,10 @@ function createChart() {
   option = {
     aria: {
       decal: {
-        show: true,
+        show: false,
       },
     },
-    color: ["#bb86fc", "#04e3fc"],
+    color: ["#55aa55", "#ff5555"],
     tooltip: {
       trigger: "item",
     },
@@ -59,7 +61,7 @@ function createChart() {
         radius: ["40%", "70%"],
         avoidLabelOverlap: false,
         itemStyle: {
-          borderRadius: 10,
+          // borderRadius: 10,
           borderColor: "#fff",
           borderWidth: 2,
         },
@@ -84,42 +86,42 @@ function createChart() {
           { value: activeCity.value.untreatedCount, name: "未处理" },
         ],
         // 自定义样式，设置多种条纹
-        graphic: [
-          {
-            type: "pattern",
-            shape: "rect",
-            x: 0,
-            y: 0,
-            width: 10,
-            height: 10,
-            repeat: "repeat",
-            style: {
-              fill: new echarts.graphic.LinearGradient(0, 0, 1, 1, [
-                { offset: 0, color: "#FF0000" },
-                { offset: 0.5, color: "#FF0000" },
-                { offset: 0.5, color: "#0000FF" },
-                { offset: 1, color: "#0000FF" },
-              ]),
-            },
-          },
-          {
-            type: "pattern",
-            shape: "rect",
-            x: 0,
-            y: 0,
-            width: 10,
-            height: 10,
-            repeat: "repeat",
-            style: {
-              fill: new echarts.graphic.LinearGradient(0, 0, 1, 1, [
-                { offset: 0, color: "#FFFF00" },
-                { offset: 0.5, color: "#FFFF00" },
-                { offset: 0.5, color: "#00FF00" },
-                { offset: 1, color: "#00FF00" },
-              ]),
-            },
-          },
-        ],
+        // graphic: [
+        //   {
+        //     type: "pattern",
+        //     shape: "rect",
+        //     x: 0,
+        //     y: 0,
+        //     width: 10,
+        //     height: 10,
+        //     repeat: "repeat",
+        //     style: {
+        //       fill: new echarts.graphic.LinearGradient(0, 0, 1, 1, [
+        //         { offset: 0, color: "#FF0000" },
+        //         { offset: 0.5, color: "#FF0000" },
+        //         { offset: 0.5, color: "#0000FF" },
+        //         { offset: 1, color: "#0000FF" },
+        //       ]),
+        //     },
+        //   },
+        //   {
+        //     type: "pattern",
+        //     shape: "rect",
+        //     x: 0,
+        //     y: 0,
+        //     width: 10,
+        //     height: 10,
+        //     repeat: "repeat",
+        //     style: {
+        //       fill: new echarts.graphic.LinearGradient(0, 0, 1, 1, [
+        //         { offset: 0, color: "#FFFF00" },
+        //         { offset: 0.5, color: "#FFFF00" },
+        //         { offset: 0.5, color: "#00FF00" },
+        //         { offset: 1, color: "#00FF00" },
+        //       ]),
+        //     },
+        //   },
+        // ],
       },
     ],
   };
@@ -140,6 +142,14 @@ onMounted(() => {
     margin-left: 10px;
     font-size: 20px;
     font-family: alimama;
+  }
+  .title2 {
+    // border: 1px solid red;
+    font-size: 20px;
+    font-family: alimama;
+    height: 20px;
+    line-height: 20px;
+    text-align: right;
   }
 }
 </style>

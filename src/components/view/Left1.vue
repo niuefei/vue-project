@@ -34,6 +34,9 @@ function createChart() {
           progress: {
             show: true,
             width: 14,
+            itemStyle: {
+              color: '#55aa55'
+            }
           },
           axisLine: {
             lineStyle: {
@@ -60,8 +63,10 @@ function createChart() {
             show: true,
             showAbove: true,
             size: 25,
+            
             itemStyle: {
               borderWidth: 10,
+              borderColor: '#55aa55'
             },
           },
           title: {
@@ -72,7 +77,8 @@ function createChart() {
             fontSize: 50,
             offsetCenter: [0, "70%"],
             color: "#d9ecff",
-            fontFamily: "alimama"
+            fontFamily: "alimama",
+            
           },
           data: [
             {
@@ -82,6 +88,11 @@ function createChart() {
           min: 1 , 
           max: 5,
           splitNumber: 4,
+          pointer: {
+            itemStyle: {
+              color: "#55aa55"
+            }
+          }
         },
       ],
     };
